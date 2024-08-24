@@ -50,18 +50,19 @@ describe('API Tests - JSONPlaceholder', () => {
 
     // 3. Requisição PUT para atualizar um usuário existente
     it('Solicitação PUT - Atualizar dados do usuário', () => {
+        const user={
+            email: 'newemail@example.com',
+            address: {
+                geo: {
+                    lat: '-50.3159', // Nova latitude
+                    lng: '100.1496'  // Nova longitude
+                }
+            }
+        }
         cy.request({
             method: 'PUT',
             url: Cypress.env('apiURL')+'/users/5',
-            body: {
-                email: 'newemail@example.com',
-                address: {
-                    geo: {
-                        lat: '-50.3159', // Nova latitude
-                        lng: '100.1496'  // Nova longitude
-                    }
-                }
-            }
+            body:user
         }).then((response) => {
             expect(response.status).to.eq(200); // Valida status code
 

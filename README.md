@@ -1,86 +1,73 @@
 
 # Cypress Testes Automatizados
 
-Este projeto utiliza Cypress para a automação de testes de front-end. Os relatórios de testes são gerados com o `cypress-mochawesome-reporter`.
+Este projeto utiliza Cypress para a automação de testes e gera relatórios detalhados usando o `cypress-mochawesome-reporter`.
 
 ## Pré-requisitos
 
 - **Node.js**: Certifique-se de que o Node.js está instalado na versão `18.12.1`.
-- **Habilitar Corepack**: Abra o Prompt de Comando em modo administrador e execute o seguinte comando para habilitar recursos adicionais do Node.js:
-  
-  ``` git bash
+- **Yarn**: O Yarn deve estar instalado na versão `1.22.22`. Execute o comando abaixo para garantir que o Corepack, que facilita o uso do Yarn, esteja habilitado:
+
+  ```bash
   corepack enable
   ```
-- **Yarn**: O Yarn deve estar instalado na versão `1.22.22`. 
 - **IDE**: É recomendável usar o Visual Studio Code (VS Code), mas você pode utilizar qualquer outra IDE de sua preferência.
 
-## Instalação do Cypress
+## Configuração do Projeto
 
-1. **Criação do Projeto**:
-   - Crie um diretório para o seu projeto onde o Cypress será configurado.
-   
-   - Navegue até o diretório criado usando o terminal (Git Bash ou Prompt de Comando) e inicialize o projeto com o comando:
-   
-     ```bash
-     yarn init
-     ```
+1. Navegue até o diretório que deseja baixar o projeto.
 
-2. **Instalação do Cypress**:
-   - Após inicializar o projeto, instale o Cypress como dependência de desenvolvimento:
-   
-     ```bash
-     yarn add cypress -D
-     ```
+2. Clone o repositório:
 
-3. **Abrir o Cypress**:
-   - Para abrir o Cypress, utilize o comando abaixo:
-   
-     ```bash
-     yarn cypress open
-     ```
+   ```bash
+   git clone https://github.com/AlexCosta041/Avaliacao_Teste.git
+   ```
+
+``
+3. Instale as dependências do projeto:
+
+   ```bash
+   yarn install
+   ```
 
 ## Instalação das Ferramentas de Relatório
 
-Para gerar relatórios detalhados, é necessário instalar algumas bibliotecas adicionais:
+Para gerar relatórios detalhados, instale as bibliotecas adicionais necessárias:
 
-- Execute o seguinte comando no Git Bash para instalar as dependências necessárias:
-
-  ```bash
-  yarn add -D cypress-multi-reporters mochawesome mochawesome-merge mochawesome-report-generator
-  ```
+```bash
+yarn add -D cypress-multi-reporters mochawesome mochawesome-merge mochawesome-report-generator
+```
 
 ## Executando os Testes com Cypress
 
 Para executar os testes, siga os passos abaixo:
 
-1. **Abra o Git Bash**.
-2. **Execute o comando**:
+1. **Execute os testes**:
 
    ```bash
    yarn cypress run
    ```
 
-## Gerando Relatórios com Mochawesome
+   Este comando executará os testes e gerará relatórios automaticamente.
 
-Após a execução dos testes, os relatórios são gerados automaticamente em formato HTML:
+## Gerando e Visualizando Relatórios com Mochawesome
 
-1. **Executando e Gerando Relatórios**:
-   - Para executar os testes e gerar relatórios utilizando o `cypress-mochawesome-reporter`, utilize:
+Após a execução dos testes, os relatórios serão gerados automaticamente no formato HTML:
 
-     ```bash
-     yarn cypress run
-     ```
+1. **Gerando Relatórios**: 
 
-   - Este comando executa os testes e gera o relatório na pasta `cypress/reports/report`.
+   Os relatórios serão gerados na pasta `cypress/reports/report/index.html`. O comando para gerar os relatórios é o mesmo utilizado para executar os testes:
 
-## Abrindo o Relatório
+   ```bash
+   yarn cypress run
+   ```
 
-Após gerar o relatório HTML, você pode abri-lo diretamente no navegador. Para isso, utilize o comando:
+2. **Visualizando o Relatório**:
 
-```bash
-open cypress/reports/html/index.html
-```
+   Após a execução dos testes, você pode abrir o relatório gerado diretamente no navegador:
 
+- **Diretório**: cypress/reports/report/index.html
+   
 ## Estrutura do Projeto
 
 - **cypress/**: Contém os testes automatizados.
@@ -93,5 +80,3 @@ open cypress/reports/html/index.html
 - **mochawesome**: `^7.1.3`
 - **mochawesome-merge**: `^4.3.0`
 - **mochawesome-report-generator**: `^6.2.0`
-
-
