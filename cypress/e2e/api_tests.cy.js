@@ -16,31 +16,32 @@ describe('API Tests - JSONPlaceholder', () => {
 
     // 2. Requisição POST para criar um novo usuário
     it('Solicitação POST - Criar um novo usuário', () => {
+        const user={
+            name: 'John Doe',
+            username: 'johndoe',
+            email: 'johndoe@example.com',
+            address: {
+                street: 'Kulas Light',
+                suite: 'Apt. 556',
+                city: 'Gwenborough',
+                zipcode: '92998-3874',
+                geo: {
+                    lat: '-37.3159',
+                    lng: '81.1496'
+                }
+            },
+            phone: '1-770-736-8031',
+            website: 'hildegard.org',
+            company: {
+                name: 'Romaguera-Crona',
+                catchPhrase: 'Multi-layered client-server neural-net',
+                bs: 'harness real-time e-markets'
+            }  
+        }
         cy.request({
             method: 'POST',
             url: Cypress.env('apiURL')+'/users',
-            body: {
-                name: 'John Doe',
-                username: 'johndoe',
-                email: 'johndoe@example.com',
-                address: {
-                    street: 'Kulas Light',
-                    suite: 'Apt. 556',
-                    city: 'Gwenborough',
-                    zipcode: '92998-3874',
-                    geo: {
-                        lat: '-37.3159',
-                        lng: '81.1496'
-                    }
-                },
-                phone: '1-770-736-8031',
-                website: 'hildegard.org',
-                company: {
-                    name: 'Romaguera-Crona',
-                    catchPhrase: 'Multi-layered client-server neural-net',
-                    bs: 'harness real-time e-markets'
-                }
-            }
+            body:user
         }).then((response) => {
             expect(response.status).to.eq(201); // Valida status code
             expect(response.body).to.have.property('id'); // Valida que o ID foi retornado
