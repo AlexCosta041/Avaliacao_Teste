@@ -8,7 +8,7 @@ Este projeto utiliza Cypress para a automação de testes de front-end. Os relat
 - **Node.js**: Certifique-se de que o Node.js está instalado na versão `18.12.1`.
 - **Habilitar Corepack**: Abra o Prompt de Comando em modo administrador e execute o seguinte comando para habilitar recursos adicionais do Node.js:
   
-  ```bash
+  ``` git bash
   corepack enable
   ```
 - **Yarn**: O Yarn deve estar instalado na versão `1.22.22`. 
